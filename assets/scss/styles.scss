@@ -1,3 +1,152 @@
 @tailwind base;
 @tailwind components;
+
+.firstflex{
+    flex:1;
+}
+.secondflex{
+    flex:2;
+}
+.thirdflex{
+    flex:3;
+}
+.fourthflex{
+    flex:4;
+}
+.fifthflex{
+    flex:5;
+}
+.sixthflex{
+    flex:6;
+}
+.seventhflex{
+    flex:7;
+}
+.eightflex{
+    flex:8;
+}
+.ninthflex{
+    flex:9;
+}
+.tenthflex{
+    flex:10;
+}
+.flexgap{
+    gap:20px;
+}
+.shadow-all{
+    -webkit-box-shadow: 2px 4px 10px 1px rgba(0,0,0,0.47);
+    box-shadow: 2px 4px 10px 1px rgba(201,201,201,0.47);
+}
+.colorOption{
+    &:nth-child(1){
+        background-color: whitesmoke;
+    }
+    &:nth-child(2){
+        background-color: #333;
+    }
+    &:nth-child(3){
+        background-color: darkblue;
+    }
+}
+.percent{
+    color:inherit;
+    &.positive{
+        color:green;
+    }
+    &.negative{
+        color:red;
+    }
+}
+.itemResult{
+    color:inherit;
+    &.positive{
+        color:green;
+    }
+    &.negative{
+        color:red;
+    }
+}
+.statusmark{
+    &.Approved{
+        color:green;
+        background-color: rgba(0, 128, 0, 0.151);
+    }
+    &.Pending{
+        color:goldenrod;
+        background-color: rgba(189,189,3,0.103);
+    }
+}
+.widthInherit{
+    width: inherit;
+}
+.chatGrid{
+    stroke:rgb(228, 225, 255);
+}
+.dark{
+    background-color: #222 !important;
+    color: rgb(156,156,156) !important;
+
+    .chatGrid{
+        stroke: rgba(228, 228, 228, 0.219)  !important;
+    }
+
+    .table{
+        background-color: #111 !important;
+
+        .tableCell{
+            color:gray !important;
+        }
+    }
+    .navbar{
+        color:#999 !important;
+        border-color: #333 !important;
+
+        .search{
+            border-color: gray !important;
+        }
+    }
+    .sidebar{
+        background-color: #111 !important;
+        border-color: #333 !important;
+
+        .top{
+            .logo{
+                color: #999 !important;
+            }
+        }
+        hr{
+            border-color: #333  !important;
+        }
+        ul{
+            li{
+                &:hover{
+                    background-color: #333 !important;
+                }
+                .icon{
+                    color: #999 !important;
+                }
+            }
+        }
+    }
+    .datatable{
+        .datagrid{
+            color:  gray !important;
+            border: none !important;
+            .viewButton, .deleteButton, .cellWithStatus{
+                color: gray !important;
+                border: none !important;
+            }
+        }
+    }
+    input{
+        background-color: transparent !important;
+    }
+}
 @tailwind utilities;
+
+@layer utilities {
+    .placeholder-sm::placeholder{
+        @apply text-sm
+    }
+}

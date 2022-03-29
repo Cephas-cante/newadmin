@@ -1,8 +1,16 @@
-import React from 'react'
+import Sidebar from '../../components/sidebar/Sidebar'
+import Navbar from '../../components/navbar/Navbar'
+import Datatable from '../../components/datatable/Datatable'
 
 const List = () => {
   return (
-    <div>List</div>
+    <div className="list flex w-full">
+      <Sidebar />
+      <div className="listContainer sixthflex">
+        <Navbar />
+        <Datatable />
+      </div>
+    </div>
   )
 }
 
