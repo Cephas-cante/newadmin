@@ -38,19 +38,31 @@ const Sidebar = () => {
                 </li>
                 </Link>
                 <p className="flex justify-center lg:justify-start xl:justify-start title text-min font-bold text-gray-500 mt-4 mb-5px">LISTS</p>
-                <Link to="/products" style={{textDecoration:"none"}}>
+                <Link to="/hotels" style={{textDecoration:"none"}}>
                 <li className="justify-center lg:justify-start flex items-center p-5px cursor-pointer hover:bg-hovercolor">
                     <Dashboard className="icon text-newpink text-xl" />
-                    <span className="hidden lg:block xl:block text-smn font-semibold text-lightpink ml-10px">Products</span>
+                    <span className="hidden lg:block xl:block text-smn 
+                    font-semibold text-lightpink ml-10px">
+                        Hotels
+                        </span>
                 </li>
                 </Link>
-                <li className="justify-center lg:justify-start flex items-center p-5px cursor-pointer hover:bg-hovercolor">
+                
+                <Link to="/rooms" style={{textDecoration:"none"}}>
+                <li className="justify-center lg:justify-start flex items-center 
+                p-5px cursor-pointer hover:bg-hovercolor">
                     <CreditCard className="icon text-newpink text-xl" />
-                    <span className="hidden lg:block xl:block text-smn font-semibold text-lightpink ml-10px">Orders</span>
+                    <span className="hidden lg:block xl:block text-smn 
+                    font-semibold text-lightpink ml-10px">
+                        Rooms
+                    </span>
                 </li>
+                </Link>
+
                 <li className="justify-center lg:justify-start flex items-center p-5px cursor-pointer hover:bg-hovercolor">
                     <LocalShipping className="icon text-newpink text-xl" />
-                    <span className="hidden lg:block xl:block text-smn font-semibold text-lightpink ml-10px">Delivery</span>
+                    <span className="hidden lg:block xl:block text-smn 
+                    font-semibold text-lightpink ml-10px">Delivery</span>
                 </li>
                 <p className="flex justify-center lg:justify-start xl:justify-start title text-min font-bold text-gray-500 mt-4 mb-5px">USEFUL</p>
                 <li className="justify-center lg:justify-start flex items-center p-5px cursor-pointer hover:bg-hovercolor">

@@ -2,9 +2,36 @@ import Sidebar from "../../components/sidebar/Sidebar"
 import Navbar from "../../components/navbar/Navbar"
 import { DriveFolderUploadOutlined } from "@mui/icons-material"
 import { useState } from "react"
+import axios from "axios"
 
 const New = ({inputs, title}) => {
   const [file, setFile] = useState("")
+  const [info, setInfo] = useState({});
+
+  const handleChange = (e) => {
+    setInfo(prev=>({...prev, [e.target.id]:e.target.value}));
+  }
+
+  const handleClick = async e => {
+    e.preventDefault();
+    const data = new FormData();
+    data.append("file", file);
+    data.append("upload_preset", "upload");
+    try{
+      const uploadRes = await axios.post("https://api.cloudinary.com/v1_1/lovable/image/upload", data);
+      console.log(uploadRes);
+      const {url} = uploadRes.data;
+      const newUser = {
+        ...info,
+        avatar: url,
+      };
+      console.log(newUser);
+      const res = await axios.post("/register_user", newUser);
+      console.log(res);
+    }catch(err){
+      console.log(err)
+    }
+  }
   return (
     <div className="new flex w-full">
       <Sidebar />
@@ -38,15 +65,20 @@ const New = ({inputs, title}) => {
                     <label className="flex items-center flexgap" htmlFor="username">
                       {input.label}
                     </label>
-                    <input className="w-full border-b outline-none border-gray-400" 
+                    <input 
+                    onChange={handleChange}
+                    className="w-full border-b outline-none border-gray-400" 
                     type={input.type}
-                    name="username" 
-                    id="username" 
-                    placeholder={input.placeholder} />
+                    // name="username" 
+                    placeholder={input.placeholder} 
+                    id={input.id}
+                    />
                   </div>
                 ))}
                 
-                <button className=" w-40 outline-none bg-teal-500 p-10px text-white border-none font-bold cursor-pointer mt-10px">
+                <button 
+                onClick={handleClick}
+                className=" w-40 outline-none bg-teal-500 p-10px text-white border-none font-bold cursor-pointer mt-10px">
                   Send
                 </button>
              </form>
